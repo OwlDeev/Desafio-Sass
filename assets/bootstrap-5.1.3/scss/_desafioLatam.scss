@@ -1,0 +1,127 @@
+.centerItem{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header{
+    grid-area: header;
+}
+
+section{
+    grid-area: section;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 0px;
+}
+
+@media only screen and (max-width: 576px) and (min-width: 100px) {
+
+  .grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "section"
+      "footer";
+    gap: 0px;
+  }
+
+  #cards {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 3000px) and (min-width: 576px) {
+
+    .grid-container {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "header"
+        "section"
+        "footer";
+      gap: 0px;
+    }
+
+    #cards {
+        grid-template-columns: auto auto auto;
+      }
+  }
+
+header{
+    nav a{
+        padding-left: 100px;
+        font-size: 40px;
+    }
+
+    nav form{
+        padding-right: 100px;
+    }
+}
+
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    #portada{
+        background-image: url("https://cdnnmundo1.img.sputniknews.com/img/07e5/0a/05/1116777572_0:231:3072:1959_1920x0_80_0_0_7aa85da24780c4354b94d41193dd8770.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height: 400px;
+        @extend .centerItem;
+        @extend .flexColumn;
+        h1{
+            color: white;
+            font-size: 100px;
+        }
+        h2{
+            color: white; 
+        }
+        #buttonPortada{
+            @extend .centerItem;
+        }   
+    }
+
+    #cards {
+        display: grid;
+        grid-gap: 10px;
+        padding: 10px;
+        width: 100%;
+        @extend .centerItem;
+        .card {
+          margin: 40px;
+          width: 18rem;
+            img{
+                width: 100%;
+                height: 170px;
+            }
+        }
+      }
+
+}
+
+footer {
+  grid-area: footer;
+  background-color: $blue-tecnology;
+  color: $white;
+  padding: 10px;
+  text-align: center;
+  max-height: 100px;
+  margin-top: 30px;
+  width: 100%;
+}
